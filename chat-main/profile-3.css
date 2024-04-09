@@ -1,0 +1,508 @@
+/* General styles */
+* {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+  }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    padding-top: 150px; /* Adjust this value according to your nav's height */
+    overflow: hidden;
+    cursor: none;
+}
+
+.container {
+    max-width: 1200px; /* Adjust to your preference */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+    
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+select {
+    width: calc(100% - 2px);
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #778697;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #64768a;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #555;
+}
+
+/* Wrapper styles */
+
+.wrapper-1,
+.wrapper-2,
+.wrapper-3 {
+    flex: 1;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto; /* Add this line */
+    height: 50vh;
+    width: 80vw;
+}
+
+/* Style the scrollbar track */
+.wrapper-1::-webkit-scrollbar,
+.wrapper-2::-webkit-scrollbar,
+.wrapper-3::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+/* Style the scrollbar thumb */
+.wrapper-1::-webkit-scrollbar-thumb,
+.wrapper-2::-webkit-scrollbar-thumb,
+.wrapper-3::-webkit-scrollbar-thumb {
+    background-color: #ccc; 
+    border-radius: 10px;
+}
+
+/* Style the scrollbar thumb on hover */
+.wrapper-1::-webkit-scrollbar-thumb:hover,
+.wrapper-2::-webkit-scrollbar-thumb:hover,
+.wrapper-3::-webkit-scrollbar-thumb:hover {
+    background-color: #555; 
+}
+
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+}
+.parent {
+    width: 80%; /* Adjust this value as needed */
+    height: 60vh; /* Adjust this value as needed */
+    margin: auto; /* Center the element */
+  }
+
+
+.user-nav {
+    display: flex;
+    flex-direction: column; /* Place items under each other */
+    align-items: flex-end; /* Align items to the right */
+    margin-top: 10px; /* Adjust spacing as needed */
+}
+nav {
+    position: fixed; /* Fixed position */
+    top: 0; /* Position at the top of the viewport */
+    width: 100%; /* Take up the full width of the viewport */
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.7737219887955182) 90%, rgba(0,0,0,0) 100%);
+    padding: 10px;
+    z-index: 1000; /* Ensure it's above other elements */
+  }
+.user-nav li {
+    margin-bottom: 5px; /* Adjust spacing between items */
+}
+
+.status-nav {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #fff;
+}
+
+
+
+.user-nav {
+    display: flex;
+    flex-direction: column; /* Place items under each other */
+    align-items: flex-end; /* Align items to the right */
+    margin-top: 10px; /* Adjust spacing as needed */
+}
+
+.user-nav li {
+    margin-bottom: 5px; /* Adjust spacing between items */
+}
+
+.status-nav {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.status-nav.online {
+    background-color: #4caf50; /* Green for online status */
+}
+
+.status-nav.offline {
+    background-color: #f44336; /* Red for offline status */
+}
+.menu{
+    margin-right: 50px;
+}
+
+nav {
+    position: fixed; /* Fixed position */
+    top: 0; /* Position at the top of the viewport */
+    width: 100%; /* Take up the full width of the viewport */
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.7737219887955182) 90%, rgba(0,0,0,0) 100%);
+    padding: 10px;
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Align items vertically */
+}
+
+nav ul li {
+    padding: 16px 16px;
+}
+
+nav ul li a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 17px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 10px 20px; /* Add this line */
+    border-radius: 5px; /* Add this line to keep the rounded corners on hover */
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    color: #fff;
+    transform: scale(1.1); /* Add this line */
+    transition: all 0.3s ease;
+
+}
+
+.nav-title {
+    flex: 1; /* Allow title to grow and take remaining space */
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 20px; /* Add spacing between avatar and buttons */
+}
+
+.avatar {
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the whole area */
+    transition: all 0.3s ease; /* Add smooth transition */
+}
+
+.avatar:hover {
+    transform: scale(1.1); /* Add zoom effect on hover */
+    width: 60px; /* Adjust as needed */
+    height: 60px; /* Adjust as needed */
+    border: 2px solid #fff; /* Add a border on hover */
+}
+
+  
+  .nav-title{
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+  }
+    
+  .avatar {
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the whole area */
+  }
+
+  /* background */
+.bubble-1 {
+    width: 1300px; /* Adjust as needed */
+    height: 1300px; /* Adjust as needed */
+    background-color: #778697; /* Adjust as needed */
+    position: absolute;
+    right: 0;
+    transform: translateX(50%); /* Centers it vertically */
+    border-radius: 50%; /* Makes it a circle */
+    z-index: -1; /* Places it behind the text */
+    transition: all 2s ease-in-out;
+}
+
+@keyframes animateBubble {
+    0% { width: 1300px; height: 1200px; }
+    50% { width: 1500px; height: 1400px; }
+    100% { width: 200px; height: 200px; }
+}
+
+@keyframes animateBubble2 {
+    0% { width: 200px; height: 200px; z-index: -1; }
+    100% { width: 220vw; height: 220vw; z-index: 9999; }
+}
+
+#bubble.animate {
+    animation: animateBubble 2s ease-in-out forwards;
+}
+
+#bubble.animate2 {
+    animation: animateBubble2 2s ease-in-out forwards;
+}
+
+.bubble-2 {
+    width: 800px; /* Adjust as needed */
+    height: 800px; /* Adjust as needed */
+    background-color: #778697; /* Adjust as needed */
+    position: absolute;
+    left: 0;
+    top: 0; /* Positions it at the top of the container */
+    transform: translate(-50%, -50%); /* Centers it vertically and horizontally */
+    border-radius: 50%; /* Makes it a circle */
+    z-index: -1; /* Places it behind the text */
+    transition: all 2s ease-in-out;
+
+}
+
+.bubble-3 {
+    width: 200px; /* Adjust as needed */
+    height: 200px; /* Adjust as needed */
+    background-color: #778697; /* Adjust as needed */
+    position: absolute;
+    left: 300px; /* X position */
+    top: 500px; /* Y position */
+    border-radius: 50%; /* Makes it a circle */
+    z-index: -1; /* Places it behind the text */
+    transition: all 2s ease-in-out;
+
+}
+
+
+@keyframes moveAround {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    25% {
+        transform: translate(-55%, -45%);
+    }
+    50% {
+        transform: translate(-50%, -50%);
+    }
+    75% {
+        transform: translate(-45%, -55%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes moveAroundBubble1 {
+    0% {
+        transform: translate(45, 0);
+    }
+    25% {
+        transform: translate(50%, -5%);
+    }
+    50% {
+        transform: translate(-50, 0);
+    }
+    75% {
+        transform: translate(50%, 5%);
+    }
+    100% {
+        transform: translate(55, 0);
+    }
+}
+
+.bubble-1 {
+    animation: moveAroundBubble1 10s ease-in-out infinite;
+}
+.bubble-2 {
+    animation: moveAround 10s ease-in-out infinite;
+}
+.bubble-3{
+    animation: moveAround 12s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .cursor {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        border: 1px solid black;
+        transition: all 200ms ease-out;
+        position: fixed;
+        pointer-events: none;
+        left: 0;
+        top: 0;
+        transform: translate(calc(-50% + 15px), -50%);
+        z-index: 9999;
+      }
+      
+      .cursor2 {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background-color: rgb(166, 166, 166);
+        opacity: .3;
+        position: fixed;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        transition: width .3s, height .3s, opacity .3s;
+        z-index: 999;
+      }
+      
+      .hover {
+        background-color: var(--first-color);
+        opacity: 0.5;
+      }
+      
+      .cursorinnerhover {
+        width: 50px;
+        height: 50px;
+        opacity: .5;
+      }
+}
+@media only screen and (max-width: 600px) {
+    
+
+    .bubble-1 {
+        width: 500px; /* Adjust as needed */
+        height: 500px; /* Adjust as needed */
+        background-color: rgb(15, 15, 15); /* Adjust as needed */
+        position: absolute;
+        right: 0;
+        transform: translateX(50%); /* Centers it vertically */
+        border-radius: 50%; /* Makes it a circle */
+        z-index: -1; /* Places it behind the text */
+        transition: all 2s ease-in-out;
+    }
+    .bubble-2 {
+        width: 400px; /* Adjust as needed */
+        height: 400px; /* Adjust as needed */
+        background-color: rgb(15, 15, 15); /* Adjust as needed */
+        position: absolute;
+        left: 0;
+        top: 0; /* Positions it at the top of the container */
+        transform: translate(-50%, -50%); /* Centers it vertically and horizontally */
+        border-radius: 50%; /* Makes it a circle */
+        z-index: -1; /* Places it behind the text */
+        transition: all 2s ease-in-out;
+    }
+    .bubble-3 {
+        width: 450px; /* Adjust as needed */
+        height: 450px; /* Adjust as needed */
+        background-color: rgb(15, 15, 15); /* Adjust as needed */
+        position: absolute;
+        left: 0; /* X position */
+        top: 1200px; /* Y position */
+        border-radius: 50%; /* Makes it a circle */
+        z-index: -1; /* Places it behind the text */
+        transition: all 2s ease-in-out;
+    }
+    .parent {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100vh; /* Set a specific height */
+    }
+    
+    .wrapper-1,
+    .wrapper-2,
+    .wrapper-3 {
+        width: 80%;
+        height: 150%;
+        flex-shrink: 0;
+        overflow: auto; /* Add this line */
+    }
+    nav ul li a {
+        font-size: 14px;
+      }
+      nav ul li  {
+        margin-right: 10px;
+      }
+      
+}
+
+
+

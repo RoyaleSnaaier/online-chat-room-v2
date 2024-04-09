@@ -1,0 +1,659 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.user-nav {
+  display: flex;
+  flex-direction: column; /* Place items under each other */
+  align-items: flex-end; /* Align items to the right */
+  margin-top: 10px; /* Adjust spacing as needed */
+}
+
+.user-nav li {
+  margin-bottom: 5px; /* Adjust spacing between items */
+}
+
+.status-nav {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #fff;
+}
+
+nav {
+  position: fixed; /* Fixed position */
+  top: 0; /* Position at the top of the viewport */
+  width: 100%; /* Take up the full width of the viewport */
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,0.7737219887955182) 90%, rgba(0,0,0,0) 100%);
+  padding: 10px;
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  padding: 16px 16px;
+}
+
+nav ul li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 17px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 10px 20px;
+  border-radius: 5px;
+  position: relative; /* Add this line */
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f2f2f2;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+
+
+.wrapper {
+  background: #fff;
+  max-width: 850px;
+  width: 100%;
+  height: 650px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: auto; /* Center horizontally */
+  margin-top: 120px;
+}
+
+
+
+.avatar {
+  width: 40px; /* Adjust as needed */
+  height: 40px; /* Adjust as needed */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image covers the whole area */
+  cursor: pointer; /* Add pointer cursor */
+  transition: transform 0.3s ease; /* Add smooth transition */
+  float: right;
+  transition: all 0.3s ease; /* Add smooth transition */
+
+}
+
+.avatar:hover {
+  transform: scale(1.1); /* Add zoom effect on hover */
+  transform: scale(1.1); /* Add zoom effect on hover */
+  border: 2px solid #fff; /* Add a border on hover */
+  padding: -20;
+}
+
+.nav-title{
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+  
+.avatar {
+  width: 50px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image covers the whole area */
+}
+
+  .chat-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+.chat-container {
+    display: flex;
+    flex-direction: column; /* Added property */
+    justify-content: center;
+    align-items: center; /* Added property */
+    background-color: #fff;
+    max-width: 800px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+  
+
+  
+/* Add this CSS to your existing style-index.css */
+
+/* Chat Box CSS */
+.chat-box {
+    position: relative;
+    min-height: 300px; /* Adjust as needed */
+    max-height: 500px; /* Adjust as needed */
+    height: 600px;
+    width: 100%;
+    overflow-y: scroll; /* Add this line to enable vertical scrolling */
+    padding: 10px;
+    box-shadow: inset 0 32px 32px -32px rgba(0, 0, 0, 5%), inset 0 -32px 32px -32px rgba(0, 0, 0, 5%);
+  }
+  
+  /* Optionally, you can style the scrollbar */
+  .chat-box::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .chat-box::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  .chat-box::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  
+  .chat-box::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  
+  .message {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    position: relative; /* Add this to position the delete button relative to the message */
+  }
+  
+  .message:hover {
+    background-color: #f5f5f5;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+  }
+
+  
+
+  .message-content {
+    overflow: auto;
+    word-wrap: break-word;
+}
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .user {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .status {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .status.online {
+    color: #00cc00;
+  }
+  
+  .status.offline {
+    color: #cc0000;
+  }
+  
+  .message-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 5px;
+  }
+
+  .message-content img {
+    max-width: 100%;
+    max-height: 300px; /* Adjust this value as needed */
+}
+
+.image-text {
+  margin-bottom: 10px; /* Adjust the margin as needed */
+  font-weight: bold; /* Optionally, you can apply additional styling to the text */
+  color: #333; /* Optionally, you can specify a color for the text */
+}
+
+  
+  .date {
+    text-align: right;
+    font-size: 12px;
+    color: #999;
+  }
+  
+  #message-form {
+    display: flex;
+    align-items: center;
+    margin-top: 10px
+  }
+  
+
+  .input-msg {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-msg:focus {
+    outline: none;
+    border: 2px solid #333; /* Green */
+    box-shadow: 0 0 10px #ccc; /* Green */
+}
+  
+.custom-file-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-left: none;
+  cursor: pointer;
+}
+
+.custom-file-upload:hover {
+  background-color: #e8e8e8; /* Slightly darker gray */
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* Hide the default file input */
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+  .send-button {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .send-button i {
+    font-size: 18px;
+  }
+  
+  .send-button:hover {
+    background-color: #0056b3;
+    transition: all 0.3s ease;
+  }
+  
+.status.away {
+    color: orange; /* Change to your desired color */
+}
+/* about */
+.about {
+  position: fixed;
+  z-index: 10;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  transition: all 0.2s ease;
+}
+.about .bg_links {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  backdrop-filter: blur(5px);
+  position: absolute;
+}
+.about .logo {
+  width: 40px;
+  height: 40px;
+  z-index: 9;
+  right: 0;
+}
+.about .social {
+  opacity: 0;
+  right: 0;
+  bottom: 0;
+}
+.about .social .icon {
+  width: 100%;
+  height: 100%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  display: flex;
+  transition: all 0.2s ease, background-color 0.4s ease;
+  opacity: 0;
+  border-radius: 100%;
+}
+.about .social.portfolio {
+  transition: all 0.8s ease;
+}
+.about .social.portfolio .icon {
+  background-image: url(https://rafaelavlucas.github.io/assets/codepen/link.svg);
+}
+.about .social.dribbble {
+  transition: all 0.3s ease;
+}
+.about .social.dribbble .icon {
+  background-image: url(https://rafaelavlucas.github.io/assets/codepen/dribbble.svg);
+}
+.about .social.linkedin {
+  transition: all 0.8s ease;
+}
+.about .social.linkedin .icon {
+  background-image: url(https://rafaelavlucas.github.io/assets/codepen/linkedin.svg);
+}
+.about:hover {
+  width: 105px;
+  height: 105px;
+  transition: all 0.6s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+.about:hover .logo {
+  opacity: 1;
+  transition: all 0.6s ease;
+}
+.about:hover .social {
+  opacity: 1;
+}
+.about:hover .social .icon {
+  opacity: 0.9;
+}
+.about:hover .social:hover {
+  background-size: 28px;
+}
+.about:hover .social:hover .icon {
+  background-size: 65%;
+  opacity: 1;
+}
+.about:hover .social.portfolio {
+  right: 0;
+  bottom: calc(100% - 40px);
+  transition: all 0.3s 0s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+.about:hover .social.portfolio .icon:hover {
+  background-color: #698fb7;
+}
+.about:hover .social.dribbble {
+  bottom: 45%;
+  right: 45%;
+  transition: all 0.3s 0.15s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+.about:hover .social.dribbble .icon:hover {
+  background-color: #ea4c89;
+}
+.about:hover .social.linkedin {
+  bottom: 0;
+  right: calc(100% - 40px);
+  transition: all 0.3s 0.25s cubic-bezier(0.64, 0.01, 0.07, 1.65);
+}
+.about:hover .social.linkedin .icon:hover {
+  background-color: #0077b5;
+}
+/* background */
+.bubble-1 {
+    width: 1300px; /* Adjust as needed */
+    height: 1300px; /* Adjust as needed */
+    background-color: #778697; /* Adjust as needed */
+    position: absolute;
+    right: 0;
+    transform: translateX(50%); /* Centers it vertically */
+    border-radius: 50%; /* Makes it a circle */
+    z-index: -1; /* Places it behind the text */
+    transition: all 2s ease-in-out;
+}
+
+@keyframes animateBubble {
+    0% { width: 1300px; height: 1200px; }
+    50% { width: 1500px; height: 1400px; }
+    100% { width: 200px; height: 200px; }
+}
+
+@keyframes animateBubble2 {
+    0% { width: 200px; height: 200px; z-index: -1; }
+    100% { width: 220vw; height: 220vw; z-index: 9999; }
+}
+
+#bubble.animate {
+    animation: animateBubble 2s ease-in-out forwards;
+}
+
+#bubble.animate2 {
+    animation: animateBubble2 2s ease-in-out forwards;
+}
+
+.bubble-2 {
+    width: 800px; /* Adjust as needed */
+    height: 800px; /* Adjust as needed */
+    background-color: #778697; /* Adjust as needed */
+    position: absolute;
+    left: 0;
+    top: 0; /* Positions it at the top of the container */
+    transform: translate(-50%, -50%); /* Centers it vertically and horizontally */
+    border-radius: 50%; /* Makes it a circle */
+    z-index: -1; /* Places it behind the text */
+    transition: all 2s ease-in-out;
+
+}
+
+.bubble-3 {
+    width: 200px; /* Adjust as needed */
+    height: 200px; /* Adjust as needed */
+    background-color: #778697; /* Adjust as needed */
+    position: absolute;
+    left: 300px; /* X position */
+    top: 500px; /* Y position */
+    border-radius: 50%; /* Makes it a circle */
+    z-index: -1; /* Places it behind the text */
+    transition: all 2s ease-in-out;
+
+}
+
+
+@keyframes moveAround {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    25% {
+        transform: translate(-55%, -45%);
+    }
+    50% {
+        transform: translate(-50%, -50%);
+    }
+    75% {
+        transform: translate(-45%, -55%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes moveAroundBubble1 {
+    0% {
+        transform: translate(45, 0);
+    }
+    25% {
+        transform: translate(50%, -5%);
+    }
+    50% {
+        transform: translate(-50, 0);
+    }
+    75% {
+        transform: translate(50%, 5%);
+    }
+    100% {
+        transform: translate(55, 0);
+    }
+}
+
+.bubble-1 {
+    animation: moveAroundBubble1 10s ease-in-out infinite;
+}
+.bubble-2 {
+    animation: moveAround 10s ease-in-out infinite;
+}
+.bubble-3{
+    animation: moveAround 12s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .cursor {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        border: 1px solid black;
+        transition: all 200ms ease-out;
+        position: fixed;
+        pointer-events: none;
+        left: 0;
+        top: 0;
+        transform: translate(calc(-50% + 15px), -50%);
+        z-index: 9999;
+      }
+      
+      .cursor2 {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background-color: rgb(166, 166, 166);
+        opacity: .3;
+        position: fixed;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        transition: width .3s, height .3s, opacity .3s;
+        z-index: 999;
+      }
+      
+      .hover {
+        background-color: var(--first-color);
+        opacity: 0.5;
+      }
+      
+      .cursorinnerhover {
+        width: 50px;
+        height: 50px;
+        opacity: .5;
+      }
+}
+@media only screen and (max-width: 600px) {
+  body {
+    overflow: hidden; /* Prevents scrolling */
+    max-width: 100vw;
+    max-height: 100vh;
+    font-size: calc(.7em + .5vw);
+  }
+
+
+    .bubble-1 {
+        width: 500px; /* Adjust as needed */
+        height: 500px; /* Adjust as needed */
+        background-color: rgb(15, 15, 15); /* Adjust as needed */
+        position: absolute;
+        right: 0;
+        transform: translateX(50%); /* Centers it vertically */
+        border-radius: 50%; /* Makes it a circle */
+        z-index: -1; /* Places it behind the text */
+        transition: all 2s ease-in-out;
+    }
+    .bubble-2 {
+        width: 400px; /* Adjust as needed */
+        height: 400px; /* Adjust as needed */
+        background-color: rgb(15, 15, 15); /* Adjust as needed */
+        position: absolute;
+        left: 0;
+        top: 0; /* Positions it at the top of the container */
+        transform: translate(-50%, -50%); /* Centers it vertically and horizontally */
+        border-radius: 50%; /* Makes it a circle */
+        z-index: -1; /* Places it behind the text */
+        transition: all 2s ease-in-out;
+    }
+    .bubble-3 {
+        width: 100px; /* Adjust as needed */
+        height: 100px; /* Adjust as needed */
+        background-color: rgb(15, 15, 15); /* Adjust as needed */
+        position: absolute;
+        left: 300px; /* X position */
+        top: 500px; /* Y position */
+        border-radius: 50%; /* Makes it a circle */
+        z-index: -1; /* Places it behind the text */
+        transition: all 2s ease-in-out;
+    }
+    .wrapper {
+      height: 650px;
+      margin: 50px;
+    }
+    .chat-box{
+        height: 650px;
+    }
+
+    nav ul li a {
+      font-size: 14px;
+    }
+    nav ul li  {
+      margin-right: 10px;
+    }
+}
+
+
+
+

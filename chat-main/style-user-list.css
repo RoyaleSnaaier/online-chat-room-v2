@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .user-nav {
+    display: flex;
+    flex-direction: column; /* Place items under each other */
+    align-items: flex-end; /* Align items to the right */
+    margin-top: 10px; /* Adjust spacing as needed */
+  }
+  
+  .user-nav li {
+    margin-bottom: 5px; /* Adjust spacing between items */
+  }
+  
+  .status-nav {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  
+  .status-nav.online {
+    background-color: #4caf50; /* Green for online status */
+  }
+  
+  .status-nav.offline {
+    background-color: #f44336; /* Red for offline status */
+  }
+  
+  nav {
+    position: fixed; /* Fixed position */
+    top: 0; /* Position at the top of the viewport */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.7737219887955182) 90%, rgba(0,0,0,0) 100%);
+    padding: 10px;
+    z-index: 1000; /* Ensure it's above other elements */
+  }
+  
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  nav ul li {
+    padding: 16px 16px;
+  }
+  
+  nav ul li a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 17px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 10px 20px; /* Add this line */
+    border-radius: 5px; /* Add this line to keep the rounded corners on hover */
+  }
+  
+  nav ul li a:hover {
+    background-color: #555;
+    color: #fff;
+    transform: scale(1.1); /* Add this line */
+  }
+
+  /* style-user-list.css */
+
+/* Container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #3333338c;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Wrapper styles */
+.wrapper {
+    padding: 20px;
+}
+
+/* User card styles */
+.user-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.user-card h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.user-card p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.tittle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 20px;
+}

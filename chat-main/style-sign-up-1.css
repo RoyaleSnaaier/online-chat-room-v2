@@ -1,0 +1,352 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+    display: flex;
+    justify-content: center; /* Centers items along the horizontal axis */
+    align-items: center; /* Centers items along the vertical axis */
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.wrapper{
+    background: #fff;
+    max-width: 450px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+                0 32px 64px -48px rgba(0,0,0,0.5);
+  }
+  
+  /* Login & Signup Form CSS Start */
+  .form{
+    padding: 25px 30px;
+  }
+  .form header{
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .form form{
+    margin: 20px 0;
+  }
+  .form form .error-text{
+    color: #721c24;
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 5px;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    margin-bottom: 10px;
+    display: none;
+  }
+  .form form .field.image input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+
+.form form .field.image label.image-label {
+    height: 45px;
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    background: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 13px;
+}
+
+/* Style the file input label on hover */
+.form form .field.image label.image-label:hover {
+    background-color: #454545;
+}
+
+/* Style the file input label on focus */
+.form form .field.image label.image-label:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #6e6e6e;
+}
+
+  .form form .name-details{
+    display: flex;
+  }
+  .form .name-details .field:first-child{
+    margin-right: 10px;
+  }
+  .form .name-details .field:last-child{
+    margin-left: 10px;
+  }
+  .form form .field{
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+    position: relative;
+  }
+  .form form .field label{
+    margin-bottom: 2px;
+  }
+  .form form .input input{
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  .form form .field input{
+    outline: none;
+  }
+  .form form .image input{
+    font-size: 17px;
+  }
+  .form form .button input{
+    height: 45px;
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    background: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 13px;
+  }
+  .form form .field i{
+    position: absolute;
+    right: 15px;
+    top: 70%;
+    color: #ccc;
+    cursor: pointer;
+    transform: translateY(-50%);
+  }
+  .form form .field i.active::before{
+    color: #333;
+    content: "\f070";
+  }
+  .form .link{
+    text-align: center;
+    margin: 10px 0;
+    font-size: 17px;
+  }
+  .form .link a{
+    color: #333;
+  }
+  .form .link a:hover{
+    text-decoration: underline;
+  }
+  
+  
+
+/* background */
+.bubble-1 {
+    width: 1300px; /* Adjust as needed */
+    height: 1300px; /* Adjust as needed */
+    background-color: #778697; /* Adjust as needed */
+    position: absolute;
+    right: 0;
+    transform: translateX(50%); /* Centers it vertically */
+    border-radius: 50%; /* Makes it a circle */
+    z-index: -1; /* Places it behind the text */
+    transition: all 2s ease-in-out;
+}
+
+@keyframes animateBubble {
+    0% { width: 1300px; height: 1200px; }
+    50% { width: 1500px; height: 1400px; }
+    100% { width: 200px; height: 200px; }
+}
+
+@keyframes animateBubble2 {
+    0% { width: 200px; height: 200px; z-index: -1; }
+    100% { width: 220vw; height: 220vw; z-index: 9999; }
+}
+
+#bubble.animate {
+    animation: animateBubble 2s ease-in-out forwards;
+}
+
+#bubble.animate2 {
+    animation: animateBubble2 2s ease-in-out forwards;
+}
+
+.bubble-2 {
+    width: 800px; /* Adjust as needed */
+    height: 800px; /* Adjust as needed */
+    background-color: #778697; /* Adjust as needed */
+    position: absolute;
+    left: 0;
+    top: 0; /* Positions it at the top of the container */
+    transform: translate(-50%, -50%); /* Centers it vertically and horizontally */
+    border-radius: 50%; /* Makes it a circle */
+    z-index: -1; /* Places it behind the text */
+    transition: all 2s ease-in-out;
+
+}
+
+.bubble-3 {
+    width: 200px; /* Adjust as needed */
+    height: 200px; /* Adjust as needed */
+    background-color: #778697; /* Adjust as needed */
+    position: absolute;
+    left: 300px; /* X position */
+    top: 500px; /* Y position */
+    border-radius: 50%; /* Makes it a circle */
+    z-index: -1; /* Places it behind the text */
+    transition: all 2s ease-in-out;
+
+}
+
+
+@keyframes moveAround {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    25% {
+        transform: translate(-55%, -45%);
+    }
+    50% {
+        transform: translate(-50%, -50%);
+    }
+    75% {
+        transform: translate(-45%, -55%);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes moveAroundBubble1 {
+    0% {
+        transform: translate(45, 0);
+    }
+    25% {
+        transform: translate(50%, -5%);
+    }
+    50% {
+        transform: translate(-50, 0);
+    }
+    75% {
+        transform: translate(50%, 5%);
+    }
+    100% {
+        transform: translate(55, 0);
+    }
+}
+
+.bubble-1 {
+    animation: moveAroundBubble1 10s ease-in-out infinite;
+}
+.bubble-2 {
+    animation: moveAround 10s ease-in-out infinite;
+}
+.bubble-3{
+    animation: moveAround 12s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .cursor {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        border: 1px solid black;
+        transition: all 200ms ease-out;
+        position: fixed;
+        pointer-events: none;
+        left: 0;
+        top: 0;
+        transform: translate(calc(-50% + 15px), -50%);
+        z-index: 9999;
+      }
+      
+      .cursor2 {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background-color: rgb(166, 166, 166);
+        opacity: .3;
+        position: fixed;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        transition: width .3s, height .3s, opacity .3s;
+        z-index: 999;
+      }
+      
+      .hover {
+        background-color: var(--first-color);
+        opacity: 0.5;
+      }
+      
+      .cursorinnerhover {
+        width: 50px;
+        height: 50px;
+        opacity: .5;
+      }
+}
+@media only screen and (max-width: 600px) {
+    .bubble-1 {
+        width: 500px; /* Adjust as needed */
+        height: 500px; /* Adjust as needed */
+        background-color: rgb(15, 15, 15); /* Adjust as needed */
+        position: absolute;
+        right: 0;
+        transform: translateX(50%); /* Centers it vertically */
+        border-radius: 50%; /* Makes it a circle */
+        z-index: -1; /* Places it behind the text */
+        transition: all 2s ease-in-out;
+    }
+    .bubble-2 {
+        width: 400px; /* Adjust as needed */
+        height: 400px; /* Adjust as needed */
+        background-color: rgb(15, 15, 15); /* Adjust as needed */
+        position: absolute;
+        left: 0;
+        top: 0; /* Positions it at the top of the container */
+        transform: translate(-50%, -50%); /* Centers it vertically and horizontally */
+        border-radius: 50%; /* Makes it a circle */
+        z-index: -1; /* Places it behind the text */
+        transition: all 2s ease-in-out;
+    }
+    .bubble-3 {
+        width: 100px; /* Adjust as needed */
+        height: 100px; /* Adjust as needed */
+        background-color: rgb(15, 15, 15); /* Adjust as needed */
+        position: absolute;
+        left: 300px; /* X position */
+        top: 500px; /* Y position */
+        border-radius: 50%; /* Makes it a circle */
+        z-index: -1; /* Places it behind the text */
+        transition: all 2s ease-in-out;
+    }
+    .form_contact {
+        width: 50%; /* Adjust as needed */
+        height: 50%; /* Adjust as needed */
+    }
+    .body{
+        cursor: auto;
+    }
+    .container {
+        width: 70%; /* Adjust as needed */
+        height: 70%; /* Adjust as needed */
+    }
+    .container * {
+        transform: scale(0.9); /* Adjust as needed */
+    }
+    .wrapper {
+      margin: 50px;
+    }
+}
+
