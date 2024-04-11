@@ -187,9 +187,7 @@ $messages = getMessages($conn);
 <div class="bubble-3"></div>
 <nav>
     <ul>
-        <li class="user-menu"><a href="index.php">Home</a></li>
-        <li class="user-menu"><a href="user-list.php">Users</a></li>
-        <li class="user-menu"><a href="banned   .php">Banned</a></li>
+        <li class="user-menu"><a href="index.php">Chat</a></li>
     </ul>
     <ul>
     <li class="user-menu">

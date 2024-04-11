@@ -108,9 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="bubble-3"></div>
 <nav>
     <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="#">Users</a></li>
-        <li><a href="#">Messages</a></li>
+        <li><a href="index.php">Chat</a></li>
     </ul>
     <ul>
     <li class="user-menu">
